@@ -9,11 +9,11 @@ public class Doctor {
     // Constructor without parameters
     Doctor() {
         System.out.println("Building an Object for class Doctor...");
-        id++;
     }
 
     // Constructor with parameters
     Doctor(String name, String speciality) {
+        id++;
         this.name = name;
         this.speciality = speciality;
         System.out.println("Created an object of type Doctor...");
@@ -29,4 +29,6 @@ public class Doctor {
     public void showID() {
         System.out.println(id);
     }
+
+
 }
