@@ -1,4 +1,6 @@
 import javax.print.Doc;
+import java.util.Date;
+import java.util.ArrayList;
 
 public class Doctor {
     // Attributes
@@ -30,5 +32,47 @@ public class Doctor {
         System.out.println(id);
     }
 
+    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+    public void addAvailableAppointment(Date date, String time){
+        availableAppointments.add(new Doctor.AvailableAppointment(date,time));
+    }
 
+    public ArrayList<AvailableAppointment> getAvailableAppointments(){
+        return availableAppointments;
+    }
+
+    public static class AvailableAppointment {
+        private int id;
+        private Date date;
+        private String time;
+
+        public AvailableAppointment(Date date, String time) {
+            this.date = date;
+            this.time = time;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public Date getDate() {
+            return date;
+        }
+
+        public void setDate(Date date) {
+            this.date = date;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+    }
 }

@@ -26,8 +26,28 @@ public class Patient {
         return phoneNumber;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if (phoneNumber.length() > 8){
+            System.out.println("Max 8 digits.");
+        }else if(phoneNumber.length() == 8){
+            this.phoneNumber = phoneNumber;
+        }
     }
 
     public String getBirthDay() {
@@ -38,8 +58,8 @@ public class Patient {
         this.birthDay = birthDay;
     }
 
-    public double getWeight() {
-        return weight;
+    public String getWeight() {
+        return this.weight + "Kg.";
     }
 
     public void setWeight(double weight) {
