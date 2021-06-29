@@ -62,6 +62,6 @@ public abstract class User {
                 "\nAddreess: "+address+". Phone: "+phoneNumber;
     }
 
-    // Declaration of abstract method.
     public abstract void showDataUser();
+
 }
