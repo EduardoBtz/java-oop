@@ -1,36 +1,26 @@
-import javax.print.Doc;
-import java.util.Date;
+package model;
+
 import java.util.ArrayList;
+import java.util.Date;
 
-public class Doctor {
-    // Attributes
-    static int id; // Will be different for every object. Autoincrements on object creation.
-    String name;
-    String speciality;
+public class Doctor extends User {
+    //Atributo
+    private String speciality;
 
-    // Constructor without parameters
-    Doctor() {
-        System.out.println("Building an Object for class Doctor...");
-    }
-
-    // Constructor with parameters
-    Doctor(String name, String speciality) {
-        id++;
-        this.name = name;
+    public Doctor(String name, String email){
+        super(name,email);
+        System.out.println("El nombre del model.Doctor asignado es: " + name);
         this.speciality = speciality;
-        System.out.println("Created an object of type Doctor...");
-        System.out.println("Name: " + this.name);
-        System.out.println("Speciality: " + this.speciality);
     }
 
-    // Methods
-    public void showName() {
-        System.out.println(name);
+    public String getSpeciality() {
+        return speciality;
     }
 
-    public void showID() {
-        System.out.println(id);
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
+
 
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
     public void addAvailableAppointment(Date date, String time){
@@ -41,7 +31,13 @@ public class Doctor {
         return availableAppointments;
     }
 
-    public static class AvailableAppointment {
+    @Override
+    public String toString() {
+        return super.toString() + "\nSpeciality: " + speciality + "\nAvailable: " + availableAppointments.toString();
+    }
+
+
+    public static class AvailableAppointment{
         private int id;
         private Date date;
         private String time;
@@ -74,5 +70,16 @@ public class Doctor {
         public void setTime(String time) {
             this.time = time;
         }
+
+
+        @Override
+        public String toString() {
+            return "Available Appointments \nDate: " +date+ "\nTime: " + time;
+        }
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Hospital: Cruz roja");
     }
 }

@@ -1,31 +1,44 @@
-import static ui.UIMenu.*;
+import model.Doctor;
+import model.Patient;
+import model.User;
+
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
 
-        // showMenu();
+        //showMenu();
 
-        Doctor myDoctor = new Doctor("Eduardo Benitez", "Pediatry");
-        Doctor myDoctor2 = new Doctor("Anahi Rodriquez", "Pediatry");
+        Doctor myDoctor = new Doctor("Anahí Salgado", "anahi@anahi.com");
+        myDoctor.addAvailableAppointment(new Date(), "4pm");
+        myDoctor.addAvailableAppointment(new Date(), "10am");
+        myDoctor.addAvailableAppointment(new Date(), "1pm");
+
+        System.out.println(myDoctor);
+
+        User user = new Doctor("Anahi", "ana@ana.com");
+
+        User user2 = new User("Lalo", "mail.mail") {
+            @Override
+            public void showDataUser() {
+
+            }
+        };
+        /*
+
+        for (model.Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
+            System.out.println(aA.getDate() + " " + aA.getTime());
+        }
+        */
 
 
-        Patient patient1 = new Patient("Lalo", "l@l.com");
-        Patient patient2 = new Patient("Pris", "Garza");
 
-        System.out.println(patient1.getName());
-        System.out.println(patient2.getName());
-        patient2 = patient1;
-
-        System.out.println(patient1.getName());
-        System.out.println(patient2.getName());
-
-        patient2.setName("Manuel");
-        System.out.println(patient1.getName());
-        System.out.println(patient2.getName());
-
+        System.out.println();
+        System.out.println();
+        Patient patient = new Patient("Alejandra", "alejandra@mail.com");
+        System.out.println(patient);
 
     }
-
 
 
 
